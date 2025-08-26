@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:AMPL/NPD/F/{##}",
+ "creation": "2025-08-25 13:01:44.472309",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xpsx",
+  "amended_from",
+  "doc_no",
+  "issue_date",
+  "rev_nodate",
+  "lead",
+  "column_break_llfa",
+  "customer",
+  "enquiry_ref",
+  "part_no",
+  "part_name",
+  "section_break_aopd",
+  "feasibility_template",
+  "checklist_section",
+  "table_zdyu",
+  "section_break_zmax",
+  "prepared_by",
+  "column_break_ncoh",
+  "approved_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_xpsx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Pre Feasibility",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "doc_no",
+   "fieldtype": "Data",
+   "label": "Doc No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "rev_nodate",
+   "fieldtype": "Date",
+   "label": "Rev No/Date"
+  },
+  {
+   "fieldname": "column_break_llfa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enquiry_ref",
+   "fieldtype": "Date",
+   "label": "Enquiry Ref.\t"
+  },
+  {
+   "fieldname": "part_no",
+   "fieldtype": "Link",
+   "label": "Part No",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "part_no.item_name",
+   "fieldname": "part_name",
+   "fieldtype": "Data",
+   "label": "Part Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "checklist_section",
+   "fieldtype": "Section Break",
+   "label": "Checklist"
+  },
+  {
+   "fieldname": "table_zdyu",
+   "fieldtype": "Table",
+   "label": "Feasibility Checklist",
+   "options": "Checklist Decision"
+  },
+  {
+   "fieldname": "section_break_aopd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Pre Feasibility Checklist",
+   "fieldname": "feasibility_template",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Feasibility Template",
+   "options": "Checklist Template",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "label": "Lead",
+   "options": "Lead",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_zmax",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ncoh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Data",
+   "label": "Approved By"
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Data",
+   "label": "Prepared By",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-26 14:01:20.419100",
+ "modified_by": "Administrator",
+ "module": "Aims Customization",
+ "name": "Pre Feasibility",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
