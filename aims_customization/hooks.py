@@ -242,3 +242,25 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+after_migrate = [
+    "aims_customization.patches.v_0.make_lead_submittable.execute",
+    "aims_customization.patches.v_0.add_pre_feasibility_link.execute",
+    "aims_customization.patches.v_0.add_design_document_field_on_lead.execute",
+    "aims_customization.patches.v_0.add_short_close_field_on_lead.execute"
+    
+    
+]
+doctype_js = {
+	"Lead": ["public/js/add_pre_feasibility_option_on_lead.js","public/js/workflow_state_submitand_closed_hide_feasibility_button.js"],
+    "Pre Feasibility":"public/js/fetched_current_login_user_name_on_preparedby_field_on_pre_feasibility.js"
+    
+    
+    
+}
+
+
+doc_events = {
+    "Lead": {
+        "on_submit": "aims_customization.api.make_pre_feasibility_mandatory.before_submit_check_pre_feasibility"
+    }
+}

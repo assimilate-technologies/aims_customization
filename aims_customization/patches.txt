@@ -4,3 +4,7 @@
 
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
+aims_customization.patches.v_0.make_lead_submittable
+aims_customization.patches.v_0.add_pre_feasibility_link
+aims_customization.patches.v_0.add_design_document_field_on_lead
+aims_customization.patches.v_0.add_short_close_field_on_lead
