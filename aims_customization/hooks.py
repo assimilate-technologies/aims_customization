@@ -246,13 +246,20 @@ after_migrate = [
     "aims_customization.patches.v_0.make_lead_submittable.execute",
     "aims_customization.patches.v_0.add_pre_feasibility_link.execute",
     "aims_customization.patches.v_0.add_design_document_field_on_lead.execute",
-    "aims_customization.patches.v_0.add_short_close_field_on_lead.execute"
+    "aims_customization.patches.v_0.add_short_close_field_on_lead.execute",
+    "aims_customization.patches.v_0.add_rejection_details_field_on_quotation.execute",
+    "aims_customization.patches.v_0.add_field_customer_approval_email_on_quotation.execute",
+    "aims_customization.patches.v_0.add_customer_po_attachment_field_on_sales_order.execute"
     
     
 ]
 doctype_js = {
-	"Lead": ["public/js/add_pre_feasibility_option_on_lead.js","public/js/workflow_state_submitand_closed_hide_feasibility_button.js"],
-    "Pre Feasibility":"public/js/fetched_current_login_user_name_on_preparedby_field_on_pre_feasibility.js"
+	"Lead": ["public/js/add_pre_feasibility_option_on_lead.js",
+    "public/js/workflow_state_submitand_closed_hide_feasibility_button.js",
+    "public/js/hide_workflow_action_closed_lead.js",
+    "public/js/short_close_field_show_only_feasibility_reject.js"],
+    "Pre Feasibility":"public/js/fetched_current_login_user_name_on_preparedby_field_on_pre_feasibility.js",
+    "Sales Order":"public/js/on_sales_order_hide_buttons_when_workflow_state_pending_for_approval.js"
     
     
     
@@ -261,6 +268,12 @@ doctype_js = {
 
 doc_events = {
     "Lead": {
-        "on_submit": "aims_customization.api.make_pre_feasibility_mandatory.before_submit_check_pre_feasibility"
+        "on_submit": "aims_customization.api.make_pre_feasibility_mandatory.before_submit_check_pre_feasibility",
+        "on_update": "aims_customization.api.update_workflow_state_based_on_link_prefeasibility.before_save"
+
+    },
+    "Quotation": {
+        "validate": "aims_customization.api.rejection_detail_mandatory_when_customer_rejected.validate_rejection_details"
     }
+    
 }
